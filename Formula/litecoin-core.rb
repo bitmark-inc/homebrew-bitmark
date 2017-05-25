@@ -8,7 +8,7 @@ class LitecoinCore < Formula
     url "https://github.com/litecoin-project/litecoin"
   end
 
-  option "without-gui", "Build the GUI client (requires Qt5)"
+  option "with-gui", "Build the GUI client (requires Qt5)"
 
   depends_on "libevent"
   depends_on :macos => :lion
