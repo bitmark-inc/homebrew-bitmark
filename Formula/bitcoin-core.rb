@@ -1,17 +1,16 @@
-class Bitcoind < Formula
+class BitcoinCore < Formula
   desc "A decentralized, peer to peer payment network"
   homepage "https://bitcoin.org/"
   url "https://github.com/bitcoin/bitcoin/archive/v0.13.2.tar.gz"
-  sha256 "8a1307605b71b1df720ed0360d801d8939138aaca0a495d0f1e4e500efc2eaa1"
+  sha256 "cd96439c4eab8562c1406eb85f81e89ee772dc03ce645926acb91d13d544262b"
 
   head do
     url "https://github.com/bitcoin/bitcoin.git"
-
-    depends_on "libevent"
   end
 
   option "with-gui", "Build the GUI client (requires Qt5)"
 
+  depends_on "libevent"
   depends_on :macos => :lion
   depends_on "autoconf" => :build
   depends_on "automake" => :build
