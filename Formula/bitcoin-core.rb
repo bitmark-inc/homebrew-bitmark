@@ -1,8 +1,8 @@
 class BitcoinCore < Formula
   desc "A decentralized, peer to peer payment network"
   homepage "https://bitcoin.org/"
-  url "https://github.com/bitcoin/bitcoin/archive/v0.13.2.tar.gz"
-  sha256 "cd96439c4eab8562c1406eb85f81e89ee772dc03ce645926acb91d13d544262b"
+  url "https://github.com/bitcoin/bitcoin/archive/v0.14.1.tar.gz"
+  sha256 "4391dbf8fa9683f17c3b03feac429c1f3d71dcc6c0dab7d01733519880ea9834"
 
   head do
     url "https://github.com/bitcoin/bitcoin.git"
@@ -25,23 +25,20 @@ class BitcoinCore < Formula
   if build.with? "gui"
     depends_on "qt5"
     depends_on "protobuf"
-    depends_on "qrencode"
     depends_on "gettext" => :recommended
   end
 
   def install
     args = ["--prefix=#{libexec}", "--disable-dependency-tracking"]
 
-    if build.with? "gui"
-      args << "--with-qrencode"
-    end
-
+    args << "--without-gui" if build.without? "gui"
     args << "--without-miniupnpc" if build.without? "miniupnpc"
 
     system "./autogen.sh"
     system "./configure", *args
 
     system "make"
+    system "make", "check"
     system "make", "install"
     bin.write_exec_script Dir["#{libexec}/bin/*"]
   end
