@@ -7,6 +7,10 @@ class Zeromq41 < Formula
   option :universal
   option "with-libpgm", "Build with PGM extension"
 
+  depends_on "automake" => :build
+  depends_on "autoconf" => :build
+  depends_on "libtool" => :build
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
   depends_on "asciidoc" => :build
   depends_on "xmlto" => :build
