@@ -1,8 +1,8 @@
 class LitecoinCore < Formula
   desc "A decentralized, peer to peer payment network"
   homepage "https://litecoin.org/"
-  url "https://github.com/litecoin-project/litecoin/archive/v0.13.2.1.tar.gz"
-  sha256 "5c205336fba9ab281375e4e8ec4c9a48068cbbeeb5dfc0a55b58649b53c898ad"
+  url "https://github.com/litecoin-project/litecoin/archive/v0.16.3.tar.gz", :tag => 'v0.16.3'
+  sha256 "7788800eb4a433696a464563384cbdf83a47eebb8698325c75314171833227c8"
 
   head do
     url "https://github.com/litecoin-project/litecoin"
@@ -11,7 +11,6 @@ class LitecoinCore < Formula
   option "with-gui", "Build the GUI client (requires Qt5)"
 
   depends_on "libevent"
-  depends_on :macos => :lion
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
