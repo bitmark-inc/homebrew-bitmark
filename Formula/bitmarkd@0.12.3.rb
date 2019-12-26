@@ -1,9 +1,9 @@
-class Bitmarkd < Formula
+class BitmarkdAT0123 < Formula
   desc "Bitmark distributed property system"
   homepage "https://github.com/bitmark-inc/bitmarkd"
   url "https://github.com/bitmark-inc/bitmarkd.git",
-      :tag      => "v0.12.4-beta.3",
-      :revision => "3678a1ace16c44081f6252ddf4dbc111e3bc13a3"
+      :tag      => "v0.12.3",
+      :revision => "bf73bd5002812794e432dd86aa04d52d26a8f3f4"
   head "https://github.com/bitmark-inc/bitmarkd.git"
 
   depends_on "go" => :build

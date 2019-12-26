@@ -1,9 +1,9 @@
-class Bitmarkd < Formula
+class BitmarkdAT0107 < Formula
   desc "Bitmark distributed property system"
   homepage "https://github.com/bitmark-inc/bitmarkd"
   url "https://github.com/bitmark-inc/bitmarkd.git",
-      :tag      => "v0.12.4-beta.3",
-      :revision => "3678a1ace16c44081f6252ddf4dbc111e3bc13a3"
+      :tag      => "v0.10.7",
+      :revision => "307ae961c2d27cbbf60d9e5599b494bad3ff923a"
   head "https://github.com/bitmark-inc/bitmarkd.git"
 
   depends_on "go" => :build
@@ -18,8 +18,7 @@ class Bitmarkd < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/bitmarkd version")
-    assert_match version.to_s, shell_output("#{bin}/recorderd version")
+    assert_match "bitmarkd: version: #{version}", shell_output("#{bin}/bitmarkd --version 2>&1", 1)
     assert_match version.to_s, shell_output("#{bin}/bitmark-cli version")
   end
 end
