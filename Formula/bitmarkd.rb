@@ -46,6 +46,19 @@ class Bitmarkd < Formula
     end
   end
 
+  def caveats; <<~EOS
+    Please make sure to create
+      #{etc}/bitmarkd/bitmarkd.conf
+
+    by copy the sample file
+      #{etc}/bitmarkd/bitmarkd.conf.sample
+
+    And update the configuration file properly by:
+      - Uncomment one of the chain vaules
+      - Input correct bitcoin and litecoin addresses
+  EOS
+  end
+
   plist_options :manual => "bitmarkd --config-file=#{HOMEBREW_PREFIX}/etc/bitmarkd/bitmarkd.conf"
 
   def plist; <<~EOS
